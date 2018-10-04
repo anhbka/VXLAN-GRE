@@ -4,7 +4,7 @@ Ngày nay VXLAN đã trở thành một giao thức chồng lấn phổ biến n
 VXLAN sử dụng các thiết bị kết cuối đường hầm VXLAN – VTEP để ánh xạ các đầu cuối vào các phân đoạn mạng. Chúng ta có thể hình dung VTEP có hai giao diện – Một kết nối với mạng IP ở giữa và giao diện còn lại kết nối tới phân đoạn mạng nội bộ – Được hỗ trợ đóng gói VXLAN.
 
 Mô hình triển khai VXLAN
-<img src="/img/1.png">
+<img src="/img/2.jpg">
 
 
 Hiện nay, rất nhiều thiết bị chuyển mạch ảo đã hỗ trợ đóng gói VXLAN. Các khách hàng trung tâm dữ liệu đã có thể nhanh chóng đưa ra các ứng dụng ảo với các dịch vụ tích hợp bằng cách triển khai mô hình VXLAN tới tận các host là các máy chủ ảo.
