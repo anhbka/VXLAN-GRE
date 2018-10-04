@@ -61,12 +61,40 @@ Rõ ràng VXLAN đã thể hiện ưu thế vượt trội so với các kỹ th
 
 ### Mô hình LAB
 
-<img src="/img/2.jpg">
+<img src="/img/1.png">
 
+Tạo OVS brigde :
 
+`ovs-vsctl add-br br0`
 
+Khởi động vm1 và vm2 trên host1 và gán vào OVS:
 
+``` sh
+ovs-vsctl add-port br0 tap0
+ovs-vsctl add-port br0 tap1
+```
 
+Cấu hình GRE:
+
+``` sh
+ovs-vsctl add-port br0 gre0 \
+    -- set interface gre0 type=gre options:remote_ip=<IP of eth0 on host2>
+```
+
+Trên host 2 thực hiện tương tự.
+
+``` sh
+ovs-vsctl add-br br0
+ovs-vsctl add-port br0 tap0
+ovs-vsctl add-port br0 tap1
+```
+
+Cấu hình GRE:
+
+``` sh
+ovs-vsctl add-port br0 gre0
+– set interface gre0 type=gre options:remote_ip=<IP of eth0 on host1>
+```
 
 
 
